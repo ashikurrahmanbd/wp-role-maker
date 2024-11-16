@@ -2,7 +2,7 @@
 
 ## Description
 
-WP Role Maker is a Clean and Easy WordPress plugin that allows you to easily manage custom roles and capabilities for your website. Whether you're creating new roles, editing existing ones, or ensuring role-based access control, WP Role Maker provides an intuitive interface and robust functionality to streamline the management of user roles.
+WP Role Maker is a easy to use WordPress plugin that allows you to easily manage custom roles and capabilities for your website. Whether you're creating new roles, editing existing ones, or ensuring role-based access control, WP Role Maker provides an intuitive interface and robust functionality to streamline the management of user roles.
 
 ## Features
 
