@@ -16,6 +16,8 @@ class Cpt{
 
         add_action('before_delete_post', [$this, 'pxls_wprm_handle_role_deletion']);
 
+        add_filter('post_row_actions', [$this, 'pxls_wprm_remove_view_link'], 10, 2);
+
 
     }
 
@@ -275,10 +277,18 @@ class Cpt{
         // Cleanup: Remove the custom post meta for the deleted role
         delete_post_meta($post_id, 'wprm_user_caps');
     }
+
+
+    //remove View link 
+    function pxls_wprm_remove_view_link($actions, $post) {
+        // Check if the post type is the custom post type
+        if ($post->post_type == 'pxls-wprm') {
+            // Remove the "View" link from the actions
+            unset($actions['view']);
+        }
+        return $actions;
+    }
     
-
-
-
-
+    
 
 }
