@@ -23,6 +23,8 @@ class Menu{
      */
     public function add_wprm_menu_page(){
 
+        
+
         $menu_slug = 'pxls-wprm';
 
         add_menu_page( 
@@ -46,12 +48,28 @@ class Menu{
             'post-new.php?post_type=pxls-wprm'
         );
 
-     
 
+        // add_submenu_page( 
+            
+        //     $menu_slug, 
+        //     'Test Menu', 
+        //     'Test Menu', 
+        //     'manage_options',
+        //     'pxls-test-menu',
+        //     [$this, 'test_menu_callback']
 
+        // );
+
+    
         
 
     }
+
+    // public function test_menu_callback(){
+
+    //     //for testing or dumping
+
+    // }
 
     
     public function plugin_menu_page(){
