@@ -1,0 +1,16 @@
+{
+    "name": "proashik012/wp-role-maker",
+    "description": "WordPress Role Maker",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+
+        "psr-4" : {
+            "Pixelese\\WPRM\\" : "includes/"
+        },
+        "files" : []
+
+    }
+}
