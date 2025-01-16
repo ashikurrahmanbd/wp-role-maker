@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Role Maker
+ * Plugin Name: User Role Maker
  * Plugin URI: https://wordpress.org/plugins/wp-role-maker
  * Author: Ashikur Rahman
  * Author URI: https://ashikurrahmanbd.github.io/
@@ -9,7 +9,7 @@
  * Description: WordPress Role Maker and Editor
  * Tags: wp role maker, Wordpress Role maker, role editor
  * Version: 1.0.0
- * Text Domain: wp-role-maker
+ * Text Domain: user-role-maker
  * Domain Path: /languages
 */
 
@@ -21,7 +21,7 @@ if ( ! defined('ABSPATH')  ) {
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-final class Pixlese_WP_Role_Maker{
+final class Pixlese_User_Role_Maker{
 
     const version = '1.0.0';
 
@@ -39,7 +39,7 @@ final class Pixlese_WP_Role_Maker{
     /**
      * Class singleton instance
      * 
-     * @return \Pixlese_WP_Role_Maker
+     * @return \Pixlese_User_Role_Maker
      */
     public static function get_instance(){
 
@@ -113,11 +113,11 @@ final class Pixlese_WP_Role_Maker{
 
 /**
  * return the main instance of the class
- */
+*/
 
  function pixelese_wp_role_maker(){
 
-    return Pixlese_WP_Role_Maker::get_instance();
+    return Pixlese_User_Role_Maker::get_instance();
 
 }
 

@@ -32,19 +32,19 @@ class Cpt{
 
         $labels = array(
 
-            'name'  => __('Roles', 'wp-role-maker'),
-            'singular_name' => __('Role', 'wp-role-maker'),
+            'name'  => __('Roles', 'user-role-maker'),
+            'singular_name' => __('Role', 'user-role-maker'),
 
-            'add_new'            => __('Add New', 'wp-role-maker'),
-            'add_new_item'       => __('Add New Role', 'wp-role-maker'),
-            'new_item'           => __('New Role', 'wp-role-maker'),
-            'edit_item'          => __('Edit Role', 'wp-role-maker'),
-            'view_item'          => __('View Role', 'wp-role-maker'),
-            'all_items'          => __('All Roles', 'wp-role-maker'),
-            'search_items'       => __('Search Role', 'wp-role-maker'),
-            'parent_item_colon'  => __('Parent Role:', 'wp-role-maker'),
-            'not_found'          => __('No Role found.', 'wp-role-maker'),
-            'not_found_in_trash' => __('No Role found in Trash.', 'wp-role-maker')
+            'add_new'            => __('Add New', 'user-role-maker'),
+            'add_new_item'       => __('Add New Role', 'user-role-maker'),
+            'new_item'           => __('New Role', 'user-role-maker'),
+            'edit_item'          => __('Edit Role', 'user-role-maker'),
+            'view_item'          => __('View Role', 'user-role-maker'),
+            'all_items'          => __('All Roles', 'user-role-maker'),
+            'search_items'       => __('Search Role', 'user-role-maker'),
+            'parent_item_colon'  => __('Parent Role:', 'user-role-maker'),
+            'not_found'          => __('No Role found.', 'user-role-maker'),
+            'not_found_in_trash' => __('No Role found in Trash.', 'user-role-maker')
 
         );
 
@@ -82,7 +82,7 @@ class Cpt{
         add_meta_box( 
 
             'wprm_cpt_capability_metabox', 
-            __('Add Capabilities for this Role ', 'wp-role-maker'), 
+            __('Add Capabilities for this Role ', 'user-role-maker'), 
             [$this, 'wprm_cpt_capability_metabox_callback'], 
             'pxls-wprm', 
             'normal', 
@@ -167,8 +167,24 @@ class Cpt{
 
     public function wprm_cpt_capability_metabox_data_save($post_id){
 
-        if (
-            !isset($_POST['pxls_wprm_capabilies_metabox_nonce']) ||!wp_verify_nonce($_POST['pxls_wprm_capabilies_metabox_nonce'], 'pxls_wprm_capabilities_metabox_data_action')){
+
+         // Check if nonce is set
+        if ( ! isset( $_POST['pxls_wprm_capabilies_metabox_nonce'] ) ) {
+            return;
+        }
+        
+
+        // if (
+        //     ! isset($_POST['pxls_wprm_capabilies_metabox_nonce']) ||! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['pxls_wprm_capabilies_metabox_nonce'], 'pxls_wprm_capabilities_metabox_data_action' ) ) )){
+
+        //     return;
+
+        // }
+
+        // Verify nonce and sanitize
+        $nonce = sanitize_text_field( wp_unslash( $_POST['pxls_wprm_capabilies_metabox_nonce'] ) );
+
+        if ( ! wp_verify_nonce( $nonce, 'pxls_wprm_capabilities_metabox_data_action' ) ) {
 
             return;
 
@@ -193,7 +209,7 @@ class Cpt{
         if (isset($_POST['capabilities'])) {
 
             // Sanitize input capabilities
-            $new_capabilities = array_map('sanitize_text_field', $_POST['capabilities']);
+            $new_capabilities = array_map('sanitize_text_field', wp_unslash( $_POST['capabilities'] ));
 
             // Update post meta
             update_post_meta($post_id, 'wprm_user_caps', $new_capabilities);

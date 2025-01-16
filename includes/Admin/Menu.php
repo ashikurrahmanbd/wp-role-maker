@@ -27,8 +27,8 @@ class Menu{
 
         add_menu_page( 
 
-            __('WP Role Maker', 'wp-role-maker'), 
-            __('WP Role Maker', 'wp-role-maker'),
+            __('WP Role Maker', 'user-role-maker'), 
+            __('WP Role Maker', 'user-role-maker'),
             'manage_options', 
             $menu_slug, 
             [$this, 'plugin_menu_page'], 

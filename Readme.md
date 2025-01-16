@@ -1,12 +1,14 @@
-=== WP Role Maker ===
+=== User Role Maker ===
 Contributors: wpartstudio, pixelese 
-Tags: wp role, wp role maker, role editor, 
+Tags: user role maker, role maker, role editor, 
 Requires PHP: 5.0 
 Requires at least: 4.0 
 Tested up to: 6.7 
-Stable tag: 1.1.0 
+Stable tag: 1.0.0 
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+WP Role Maker is a easy to use WordPress plugin that allows you to easily manage custom roles and capabilities for your website.
 
 ## Description
 
