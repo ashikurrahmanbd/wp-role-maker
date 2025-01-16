@@ -131,12 +131,7 @@ class Cpt{
             'manage_ast_block_templates', 'administrator'
         ];
 
-        
-
-
         ?>
-
-            <!-- <input type="text" name="capp" value="<?php //echo ($get_cap) ? esc_attr( $get_cap ) : ''; ?>"> -->
 
             <div class="all-caps">
 
@@ -154,13 +149,11 @@ class Cpt{
 
                         $checked = in_array($capability, $capabilities) ? 'checked' : '';
 
-                        echo '<label for="'. $capability .'"> <input type="checkbox" name="capabilities[]" id="'.$capability.'" value="'.$capability.'" '.$checked.' /> '. $capability .' </label>';
+                        $read_cap_message = ($capability === 'read' ? ' (Mandatory)' : '');
+
+                        echo '<label for="'. $capability .'"> <input type="checkbox" name="capabilities[]" id="'.$capability.'" value="'.$capability.'" '.$checked.' /> '. $capability . $read_cap_message .' </label>';
 
                     }
-
-                   
-
-                    
 
                 ?>
                 
@@ -183,14 +176,17 @@ class Cpt{
 
         // Check for autosave
         if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+
             return;
+
         }
     
         // Check user permissions
         if (!current_user_can('edit_post', $post_id)) {
+
             return;
+
         }
-    
         
         $role_slug = strtolower(str_replace(' ', '_', get_the_title($post_id)));
 
@@ -204,6 +200,7 @@ class Cpt{
 
             // Get or create the role
             $role = get_role($role_slug);
+
             if ($role === null) {
                 // Role doesn't exist, create it
                 add_role(
@@ -211,7 +208,9 @@ class Cpt{
                     get_the_title($post_id),
                     array_fill_keys($new_capabilities, true)
                 );
+
             } else {
+
                 // Role exists, sync capabilities
                 $existing_capabilities = $role->capabilities;
 
@@ -228,26 +227,28 @@ class Cpt{
                         $role->remove_cap($capability);
                     }
                 }
+
             }
         } else {
+
             // If no capabilities are submitted, delete all meta and role
             delete_post_meta($post_id, 'wprm_user_caps');
 
             // Optionally delete the role
             remove_role($role_slug);
-        }
 
-        
+        }
 
 
     }
 
-    
-
     // Handle when the post is moved to trash
     function pxls_wprm_handle_role_trash($post_id) {
+
         if (get_post_type($post_id) !== 'pxls-wprm') {
+
             return;
+
         }
 
         // Generate the role slug from the post title
@@ -255,12 +256,17 @@ class Cpt{
 
         // Get the role object
         $role = get_role($role_slug);
+
         if ($role) {
+
             // Reassign users with this role to 'subscriber'
             $users = get_users(['role' => $role_slug]);
+
             foreach ($users as $user) {
+
                 // Assign the 'subscriber' role to the user
                 $user->set_role('subscriber');
+
             }
 
             // Remove the role
@@ -270,22 +276,30 @@ class Cpt{
 
     // Handle when the post is permanently deleted
     function pxls_wprm_handle_role_deletion($post_id) {
+
         if (get_post_type($post_id) !== 'pxls-wprm') {
+
             return;
+
         }
 
         // Cleanup: Remove the custom post meta for the deleted role
         delete_post_meta($post_id, 'wprm_user_caps');
+
     }
 
 
     //remove View link 
     function pxls_wprm_remove_view_link($actions, $post) {
+
         // Check if the post type is the custom post type
         if ($post->post_type == 'pxls-wprm') {
+
             // Remove the "View" link from the actions
             unset($actions['view']);
+
         }
+
         return $actions;
     }
     

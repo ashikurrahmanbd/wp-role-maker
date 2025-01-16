@@ -5,7 +5,7 @@
  * Author: Ashikur Rahman
  * Description: WordPress Role Maker and Editor
  * Tags: wp role maker, Wordpress Role maker, role editor
- * Version: 1.0
+ * Version: 1.0.0
  * License: GPLv2 or later
  * Text Domain: wp-role-maker
 */
@@ -20,7 +20,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 final class Pixlese_Wp_role_maker{
 
-    const version = '1.0';
+    const version = '1.0.0';
 
     private function __construct(){
 

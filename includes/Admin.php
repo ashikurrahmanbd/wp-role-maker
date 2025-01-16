@@ -4,7 +4,6 @@ namespace Pixelese\WPRM;
 
 class Admin{
 
-
     function __construct(){
 
 
@@ -13,9 +12,5 @@ class Admin{
         new Admin\Cpt();
 
     }
-
-
-
-
 
 }
