@@ -1,4 +1,12 @@
 === WP Role Maker ===
+Contributors: wpartstudio, pixelese 
+Tags: wp role, wp role maker, role editor, 
+Requires PHP: 5.0 
+Requires at least: 4.0 
+Tested up to: 6.7 
+Stable tag: 1.1.0 
+License: GPLv2 or later 
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 ## Description
 
@@ -43,9 +51,6 @@ WP Role Maker is a easy to use WordPress plugin that allows you to easily manage
   - Move the custom post associated with the role to trash.
   - The plugin will automatically reassign users to the 'Subscriber' role.
 
-## Support
-
-For support or feature requests, please visit the [WP Role Maker Support Forum](https://example.com/support) or contact the developer directly.
 
 ## Changelog
 
@@ -57,7 +62,7 @@ For support or feature requests, please visit the [WP Role Maker Support Forum](
 ## Author
 
 - **Ashikur Rahman**  
-  [Author Website](https://pixelese.com)
+  [Author Website](https://ashikurrahmanbd.github.io)
   [Developer Email](proashik012@gmail.com)
 
 ## License

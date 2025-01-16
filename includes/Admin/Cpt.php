@@ -151,7 +151,7 @@ class Cpt{
 
                         $read_cap_message = ($capability === 'read' ? ' (Mandatory)' : '');
 
-                        echo '<label for="'. $capability .'"> <input type="checkbox" name="capabilities[]" id="'.$capability.'" value="'.$capability.'" '.$checked.' /> '. $capability . $read_cap_message .' </label>';
+                        echo '<label for="'. esc_attr($capability) .'"> <input type="checkbox" name="capabilities[]" id="'. esc_attr( $capability ) .'" value="'. esc_attr( $capability ) .'" '. esc_attr( $checked ) .' /> '. esc_html( $capability . $read_cap_message ) .' </label>';
 
                     }
 
