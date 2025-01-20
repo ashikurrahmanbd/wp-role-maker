@@ -123,6 +123,7 @@ class Cpt{
                         display: inline-block;
                         min-width: 200px;
                         margin-bottom: 6px;
+                        font-size: 12px;
                     }
                 </style>
 
