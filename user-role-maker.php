@@ -132,17 +132,3 @@ final class PXLS_WPRM_Role_Maker{
  * kick of the  plugin
  */
 pixelese_wp_role_maker();
-
-add_action('init', 'testtt');
-
-function testtt(){
-
-
-    $caps = pxls_wprm_get_all_capabilities_dynamically();
-    
-    foreach( $caps as $cap_index => $cap_value ){
-
-        echo $cap_value . '<br />';
-
-    }
-}
