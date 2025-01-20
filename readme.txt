@@ -1,18 +1,17 @@
 === User Role Maker ===
-Contributors: wpartstudio, pixelese 
+Contributors: wpartstudio
+Donate link: https://www.buymeacoffee.com/wpartstudio 
 Tags: user role maker, role maker, role editor, 
-Requires PHP: 5.0 
-Requires at least: 4.0 
 Tested up to: 6.7 
 Stable tag: 1.0.0 
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-WP Role Maker is a easy to use WordPress plugin that allows you to easily manage custom roles and capabilities for your website.
+User Role Maker is a easy to use WordPress plugin that allows you to easily manage custom roles and capabilities for your website.
 
 ## Description
 
-WP Role Maker is a easy to use WordPress plugin that allows you to easily manage custom roles and capabilities for your website. Whether you're creating new roles, editing existing ones, or ensuring role-based access control, WP Role Maker provides an intuitive interface and robust functionality to streamline the management of user roles.
+User Role Maker is a easy to use WordPress plugin that allows you to easily manage custom roles and capabilities for your website. Whether you're creating new roles, editing existing ones, or ensuring role-based access control, User Role Maker provides an intuitive interface and robust functionality to streamline the management of user roles.
 
 ## Features
 
@@ -25,13 +24,13 @@ WP Role Maker is a easy to use WordPress plugin that allows you to easily manage
 ## Installation
 
 1. **Upload the Plugin**:
-   - Download the `WP Role Maker` plugin ZIP file.
+   - Download the `User Role Maker` plugin ZIP file.
    - Go to your WordPress admin panel, navigate to `Plugins > Add New`.
    - Click 'Upload Plugin' and select the downloaded ZIP file.
    - Click 'Install Now' and then 'Activate' to activate the plugin.
 
 2. **Using the Plugin**:
-   - Navigate to the `WP Role Maker` menu item in the WordPress admin panel.
+   - Navigate to the `User Role Maker` menu item in the WordPress admin panel.
    - Use the metabox on the custom post type to manage roles and capabilities.
    - Customize roles by adding or removing capabilities.
    - Delete roles to automatically reassign users to the 'Subscriber' role.
@@ -39,7 +38,7 @@ WP Role Maker is a easy to use WordPress plugin that allows you to easily manage
 ## Usage
 
 - **Creating a New Role**: 
-  - Navigate to the WP Role Maker Optin
+  - Navigate to the User Role Maker Optin
   - Add a new post or edit an existing one.
   - Fill in the title and capabilities for the new role.
   - Save the post to create or update the role.

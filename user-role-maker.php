@@ -6,9 +6,11 @@
  * Author URI: https://ashikurrahmanbd.github.io/
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * Description: WordPress Role Maker and Editor
- * Tags: wp role maker, Wordpress Role maker, role editor
+ * Description: WordPress User Role Maker and Editor. Making Roles is now more easy!
+ * Tags: wp role maker, Wordpress Role maker, role editor, user role editor, user role maker
  * Version: 1.0.0
+ * Requires PHP: 5.0 
+ * Requires at least: 5.0 
  * Text Domain: user-role-maker
  * Domain Path: /languages
 */
@@ -19,9 +21,14 @@ if ( ! defined('ABSPATH')  ) {
 
 }
 
+// Composer Autolaod File
 require_once __DIR__ . '/vendor/autoload.php';
 
-final class Pixlese_User_Role_Maker{
+
+/**
+ * Plugin Core Class
+ */
+final class PXLS_WPRM_Role_Maker{
 
     const version = '1.0.0';
 
@@ -39,7 +46,7 @@ final class Pixlese_User_Role_Maker{
     /**
      * Class singleton instance
      * 
-     * @return \Pixlese_User_Role_Maker
+     * @return \PXLS_WPRM_Role_Maker
      */
     public static function get_instance(){
 
@@ -117,7 +124,7 @@ final class Pixlese_User_Role_Maker{
 
  function pixelese_wp_role_maker(){
 
-    return Pixlese_User_Role_Maker::get_instance();
+    return PXLS_WPRM_Role_Maker::get_instance();
 
 }
 
@@ -126,4 +133,16 @@ final class Pixlese_User_Role_Maker{
  */
 pixelese_wp_role_maker();
 
+add_action('init', 'testtt');
 
+function testtt(){
+
+
+    $caps = pxls_wprm_get_all_capabilities_dynamically();
+    
+    foreach( $caps as $cap_index => $cap_value ){
+
+        echo $cap_value . '<br />';
+
+    }
+}

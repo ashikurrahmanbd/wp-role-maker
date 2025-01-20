@@ -10,7 +10,9 @@
         "psr-4" : {
             "Pixelese\\WPRM\\" : "includes/"
         },
-        "files" : []
+        "files" : [
+            "includes/functions.php"
+        ]
 
     }
 }
