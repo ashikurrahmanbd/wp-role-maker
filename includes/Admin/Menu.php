@@ -1,6 +1,6 @@
 <?php
 
-namespace Pixelese\WPRM\Admin;
+namespace PXLS\WPRM\Admin;
 
 
 class Menu{
@@ -12,7 +12,7 @@ class Menu{
     */
     function __construct(){
 
-        add_action( 'admin_menu', [$this, 'add_wprm_menu_page'] );
+        add_action( 'admin_menu', [$this, 'pxls_wprm_add_menu_page'] );
 
     }
 
@@ -21,17 +21,17 @@ class Menu{
      * Summary of add_wprm_menu_page
      * @return void
      */
-    public function add_wprm_menu_page(){
+    public function pxls_wprm_add_menu_page(){
 
         $menu_slug = 'pxls-wprm';
 
         add_menu_page( 
 
-            __('WP Role Maker', 'user-role-maker'), 
-            __('WP Role Maker', 'user-role-maker'),
+            __('User Role Maker', 'user-role-maker'), 
+            __('User Role Maker', 'user-role-maker'),
             'manage_options', 
             $menu_slug, 
-            [$this, 'plugin_menu_page'], 
+            [$this, 'pxls_wprm_plugin_menu_page'], 
             'dashicons-privacy', 
 
         );
@@ -49,7 +49,7 @@ class Menu{
     }
 
     
-    public function plugin_menu_page(){
+    public function pxls_wprm_plugin_menu_page(){
 
         /**
          * Just a Place holder no need to add anything

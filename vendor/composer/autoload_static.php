@@ -13,12 +13,12 @@ class ComposerStaticInit0eac906586f14716f256a4c14c55297c
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
-            'Pixelese\\WPRM\\' => 14,
+            'PXLS\\WPRM\\' => 10,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Pixelese\\WPRM\\' => 
+        'PXLS\\WPRM\\' => 
         array (
             0 => __DIR__ . '/../..' . '/includes',
         ),

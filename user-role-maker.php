@@ -8,7 +8,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Description: WordPress User Role Maker and Editor. Making Roles is now more easy!
  * Tags: wp role maker, Wordpress Role maker, role editor, user role editor, user role maker
- * Version: 1.0.0
+ * Version: 1.1.0
  * Requires PHP: 5.0 
  * Requires at least: 5.0 
  * Text Domain: user-role-maker
@@ -30,7 +30,7 @@ require_once __DIR__ . '/vendor/autoload.php';
  */
 final class PXLS_WPRM_Role_Maker{
 
-    const version = '1.0.0';
+    const version = '1.1.0';
 
     private function __construct(){
 
@@ -70,9 +70,7 @@ final class PXLS_WPRM_Role_Maker{
 
         define('PXLS_WPRM_VERSION', self::version );
 
-        define( 'PXLS_WPRM_FILE', __FILE__ );
-
-        define( 'PXLS_WPRM_PATH', __DIR__ );
+        define( 'PXLS_WPRM_PATH',  plugin_dir_path( __FILE__ ));
 
         define( 'PXLS_WPRM_URL', plugins_url( '', __FILE__ ) );
 
@@ -109,7 +107,8 @@ final class PXLS_WPRM_Role_Maker{
 
         if( is_admin() ){
 
-            new Pixelese\WPRM\Admin();
+
+            new PXLS\WPRM\Admin();
 
         }
 

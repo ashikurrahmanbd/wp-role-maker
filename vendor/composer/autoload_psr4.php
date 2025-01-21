@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Pixelese\\WPRM\\' => array($baseDir . '/includes'),
+    'PXLS\\WPRM\\' => array($baseDir . '/includes'),
 );

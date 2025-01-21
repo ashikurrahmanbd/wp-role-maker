@@ -1,16 +1,16 @@
 <?php
 
-namespace Pixelese\WPRM\Admin;
+namespace PXLS\WPRM\Admin;
 
 class Cpt{
 
     function __construct(){
 
-        add_action( 'init', [$this, 'register_wprm_post_type'] );
+        add_action( 'init', [$this, 'pxls_wprm_register_wprm_post_type'] );
 
-        add_action( 'add_meta_boxes', [$this, 'wprm_cpt_meta_boxes'] );
+        add_action( 'add_meta_boxes', [$this, 'pxls_wprm_cpt_meta_boxes'] );
 
-        add_action( 'save_post', [$this, 'wprm_cpt_capability_metabox_data_save'] );
+        add_action( 'save_post', [$this, 'pxls_wprm_cpt_capability_metabox_data_save'] );
 
         add_action('wp_trash_post', [$this, 'pxls_wprm_handle_role_trash']);
 
@@ -28,7 +28,7 @@ class Cpt{
      * 
      * @return void
      */
-    public function register_wprm_post_type(){
+    public function pxls_wprm_register_wprm_post_type(){
 
         $labels = array(
 
@@ -77,13 +77,13 @@ class Cpt{
      * @param mixed $post
      * @return void
      */
-    public function wprm_cpt_meta_boxes($post){
+    public function pxls_wprm_cpt_meta_boxes($post){
 
         add_meta_box( 
 
             'wprm_cpt_capability_metabox', 
             __('Add Capabilities for this Role ', 'user-role-maker'), 
-            [$this, 'wprm_cpt_capability_metabox_callback'], 
+            [$this, 'pxls_wprm_cpt_capability_metabox_callback'], 
             'pxls-wprm', 
             'normal', 
             'default', 
@@ -101,7 +101,7 @@ class Cpt{
      * @param mixed $post
      * @return void
      */
-    public function wprm_cpt_capability_metabox_callback($post){
+    public function pxls_wprm_cpt_capability_metabox_callback($post){
 
         wp_nonce_field( 
 
@@ -117,15 +117,6 @@ class Cpt{
         ?>
 
             <div class="all-caps">
-
-                <style>
-                    .all-caps label{
-                        display: inline-block;
-                        min-width: 200px;
-                        margin-bottom: 6px;
-                        font-size: 12px;
-                    }
-                </style>
 
                 <?php 
 
@@ -149,7 +140,7 @@ class Cpt{
     }
 
 
-    public function wprm_cpt_capability_metabox_data_save($post_id){
+    public function pxls_wprm_cpt_capability_metabox_data_save($post_id){
 
 
          // Check if nonce is set
