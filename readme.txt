@@ -3,7 +3,7 @@ Contributors: wpartstudio
 Donate link: https://www.buymeacoffee.com/wpartstudio 
 Tags: user role maker, role maker, role editor, 
 Tested up to: 6.7 
-Stable tag: 1.1.0 
+Stable tag: 1.2.0 
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 

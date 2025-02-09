@@ -2,17 +2,16 @@
 /**
  * Plugin Name: User Role Maker
  * Plugin URI: https://wordpress.org/plugins/wp-role-maker
+ * Description: WordPress User Role Maker and Editor. Making Roles is now more easy!
+ * Tags: WP Role Maker, WordPress Role maker, role editor, user role editor, user role maker
  * Author: Ashikur Rahman
  * Author URI: https://ashikurrahmanbd.github.io/
+ * Version: 1.2.0
+ * Requires PHP: 7.0
+ * Requires at least: 5.0
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * Description: WordPress User Role Maker and Editor. Making Roles is now more easy!
- * Tags: wp role maker, Wordpress Role maker, role editor, user role editor, user role maker
- * Version: 1.1.0
- * Requires PHP: 5.0 
- * Requires at least: 5.0 
  * Text Domain: user-role-maker
- * Domain Path: /languages
 */
 
 if ( ! defined('ABSPATH')  ) {
@@ -30,7 +29,7 @@ require_once __DIR__ . '/vendor/autoload.php';
  */
 final class PXLS_WPRM_Role_Maker{
 
-    const version = '1.1.0';
+    const version = '1.2.0';
 
     private function __construct(){
 
@@ -121,7 +120,7 @@ final class PXLS_WPRM_Role_Maker{
  * return the main instance of the class
 */
 
- function pixelese_wp_role_maker(){
+ function pxls_wprm_role_maker(){
 
     return PXLS_WPRM_Role_Maker::get_instance();
 
@@ -130,4 +129,4 @@ final class PXLS_WPRM_Role_Maker{
 /**
  * kick of the  plugin
  */
-pixelese_wp_role_maker();
+pxls_wprm_role_maker();
