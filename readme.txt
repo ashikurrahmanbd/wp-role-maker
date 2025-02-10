@@ -55,7 +55,7 @@ User Role Maker is a easy to use WordPress plugin that allows you to easily mana
 
 ## Changelog
 
-### [Version 1.0.0]
+### [Version 1.2.0]
 - Initial release with custom role creation and management.
 - Added support for editing and deleting roles.
 - Automatic reassignment of users to 'Subscriber' role upon role deletion.
